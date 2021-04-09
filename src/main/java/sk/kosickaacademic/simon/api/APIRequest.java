@@ -29,9 +29,10 @@ public class APIRequest {
             URL url = new URL(prop.getProperty("url") +prop.getProperty("api") +prop.getProperty("format"));
             URLConnection con = url.openConnection();
             BufferedReader br = new BufferedReader(new InputStreamReader(con.getInputStream()));
-            String result="";
+            String result = "{" +'\n';
             while(br.readLine() != null)
-                result+=br.readLine();
+                result+=br.readLine() +'\n';
+            result += '\n' +"}";
             br.close();
             return result;
         }catch (Exception e){
