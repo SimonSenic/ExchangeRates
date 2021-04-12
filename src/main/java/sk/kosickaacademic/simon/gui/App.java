@@ -14,9 +14,10 @@ public class App extends Application
 {
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("src/main/java/sk/kosickaacademic/simon/gui/sample.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/sample.fxml"));
         primaryStage.setTitle("Exchange Rates");
-        primaryStage.setScene(new Scene(root, 400, 420));
+        primaryStage.setScene(new Scene(root, 380, 180));
+        primaryStage.setResizable(false);
         primaryStage.show();
     }
 
@@ -34,8 +35,8 @@ public class App extends Application
         for(Map.Entry<String, Double> temp : map.entrySet()){
             System.out.println(temp.getKey() +" " +temp.getValue());
         }*/
+        //new Conversion().convertData(20);
 
-        new Conversion().convertData(20);
         launch(args);
     }
 }

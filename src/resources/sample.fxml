@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="167.0" prefWidth="382.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sk.kosickaacademic.simon.gui.Controller">
+   <children>
+      <Button fx:id="btn_convert" layoutX="274.0" layoutY="118.0" mnemonicParsing="false" onAction="#btn_convert_click" text="Convert" />
+      <TextField fx:id="txt_result" editable="false" layoutX="183.0" layoutY="71.0" />
+      <MenuButton fx:id="menu_to" layoutX="82.0" layoutY="71.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="65.0" text="USD">
+        <items>
+          <MenuItem fx:id="item_usd" mnemonicParsing="false" onAction="#item_usd_select" text="USD" />
+          <MenuItem fx:id="item_btc" mnemonicParsing="false" onAction="#item_btc_select" text="BTC" />
+            <MenuItem fx:id="item_cad" mnemonicParsing="false" onAction="#item_cad_select" text="CAD" />
+            <MenuItem fx:id="item_bnd" mnemonicParsing="false" onAction="#item_bnd_select" text="BND" />
+            <MenuItem fx:id="item_pln" mnemonicParsing="false" onAction="#item_pln_select" text="PLN" />
+        </items>
+      </MenuButton>
+      <Label layoutX="35.0" layoutY="76.0" text="To:" />
+      <Label layoutX="28.0" layoutY="27.0" text="From:" />
+      <Label layoutX="100.0" layoutY="27.0" text="EUR" />
+      <TextField fx:id="txt_value" layoutX="183.0" layoutY="23.0" />
+      <Label fx:id="lab_error" layoutX="58.0" layoutY="122.0" text="Error: Invalid value!" textFill="RED" visible="false" />
+   </children>
+</AnchorPane>

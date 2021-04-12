@@ -7,10 +7,10 @@ import java.util.Map;
 import java.util.Set;
 
 public class Conversion {
-    public void convertData(double eur){
+    public double convertData(double eur, String currency){
         if(eur<=0){
             System.out.println("Error: Invalid input.");
-            return;
+            return 0;
         }
 
         Set<String> set = new HashSet<>();
@@ -26,7 +26,8 @@ public class Conversion {
                 double result = eur * (double) map.get(temp);
                 System.out.println("EUR: " +eur +" -> " +temp +": " +result);
             }
+            if(temp.equals(currency)) return eur * (double) map.get(temp);
         }
-
+        return 0;
     }
 }
