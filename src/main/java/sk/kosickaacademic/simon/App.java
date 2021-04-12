@@ -1,9 +1,6 @@
 package sk.kosickaacademic.simon;
 
-import sk.kosickaacademic.simon.api.APIRequest;
-
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Set;
 
 public class App
@@ -18,9 +15,11 @@ public class App
         set.add("CAD");
         set.add("PLN");
         //System.out.println(new APIRequest().getRatesFromAPI());
-        Map<String, Double> map = new APIRequest().getExchangeRates(set);
-        for(Map.Entry<String, Double> tmp : map.entrySet()){
-            System.out.println(tmp.getKey() +" " +tmp.getValue());
-        }
+        /*Map<String, Double> map = new APIRequest().getExchangeRates(set);
+        for(Map.Entry<String, Double> temp : map.entrySet()){
+            System.out.println(temp.getKey() +" " +temp.getValue());
+        }*/
+
+        new Conversion().convertData(20);
     }
 }
