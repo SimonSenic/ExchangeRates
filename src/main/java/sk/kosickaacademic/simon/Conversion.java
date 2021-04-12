@@ -27,6 +27,6 @@ public class Conversion {
                 System.out.println("EUR: " +eur +" -> " +temp +": " +result);
             }
         }
-    }
 
+    }
 }
