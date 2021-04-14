@@ -1,7 +1,9 @@
 package sk.kosickaacademic.simon;
 
 import sk.kosickaacademic.simon.api.APIRequest;
+import sk.kosickaacademic.simon.database.DatabaseMongo;
 
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
@@ -20,14 +22,19 @@ public class Conversion {
         set.add("BND");
         set.add("PLN");
         Map map = new APIRequest().getExchangeRates(set);
+        Map<String, Double> record = new HashMap();
 
+        double output = 0;
         for(String temp : set){
             if(map.containsKey(temp)){
                 double result = eur * (double) map.get(temp);
                 System.out.println("EUR: " +eur +" -> " +temp +": " +result);
+                record.put(temp, result);
             }
-            if(temp.equals(currency)) return eur * (double) map.get(temp);
+            if(temp.equals(currency)) output = eur * (double) map.get(temp);
         }
-        return 0;
+        new DatabaseMongo().insertNewData(eur, record);
+        System.out.println();
+        return output;
     }
 }

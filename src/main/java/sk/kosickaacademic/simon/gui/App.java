@@ -6,6 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import sk.kosickaacademic.simon.Conversion;
+import sk.kosickaacademic.simon.database.DatabaseMongo;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -36,6 +37,7 @@ public class App extends Application
             System.out.println(temp.getKey() +" " +temp.getValue());
         }*/
         //new Conversion().convertData(20);
+        new DatabaseMongo().deleteData(28);
 
         launch(args);
     }
